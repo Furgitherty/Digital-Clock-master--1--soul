@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title> Digital Clock </title>
+
+        <style>
+
+            body {
+
+                background-color: yellow;
+
+            }
+
+            button {
+
+                padding: 30px;
+
+            }
+
+            .agreement {
+
+                margin-left: 550px;
+
+            }
+
+            .recreation {
+
+                border-style: dashed;
+
+                margin-right: 10px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body onload="startTime()">
+
+        <h1 style="text-align: center;"> Clock </h1>
+
+        <div id="txt12" style="text-align: center; font-size: 100px; padding-top: 10px;" class="recreation"></div>
+
+        <br>
+
+        <p class="agreement"> <button>12 hours</button> </p>
+
+        <p class="agreement"> <button>24 hours</button> </p>
+
+        <script>
+
+            function startTime() {
+                const today = new Date();
+
+                // Define variables
+
+                let h = today.getHours();
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+
+                // This changes anything with the Id, "txt"
+
+                document.getElementById('txt12').innerHTML =  h + ":" + m + ":" + s;
+
+                // This sets a limit
+
+                setTimeout(startTime, 1000);
+            }
+
+            function startTime2() {
+
+                const today = new Date();
+
+                // Define variables
+
+                let h = today.getHours();
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+
+            }
+
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};
+                return i;
+            }
+
+        </script>
+     
+    </body>
+
+</html>
